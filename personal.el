@@ -24,3 +24,14 @@
 
 ;; Set email
 (setq user-mail-address "dtru@seas.upenn.edu")
+
+
+;; ocaml tuareg mode
+(add-to-list 'load-path "~/.emacs.d/personal/tuareg-caml-mode")
+(add-to-list 'load-path "~/.emacs.d/personal/tuareg-2.0.4")
+(setq auto-mode-alist (cons '("\\.ml\\w?" . tuareg-mode) auto-mode-alist))
+(autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
+(autoload 'camldebug "camldebug" "Run the Caml debugger" t)
+
+;; Fix aspell bug with prelude on osx
+(setq ispell-program-name "/opt/local/bin/aspell")
